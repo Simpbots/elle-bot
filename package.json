@@ -1,0 +1,28 @@
+{
+  "name": "elle-next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "build": "find ./src -name \"*.ts\" -type f | tsc",
+    "dev": "ts-node-dev --respawn --transpile-only --poll ./src/index.ts"
+  },
+  "author": "Rey",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node-dev": "^1.1.6"
+  },
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^15.12.2",
+    "consola": "^2.15.3",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "glob": "^7.1.7",
+    "mongoose": "^5.12.14",
+    "nanoid": "^3.1.23",
+    "typescript": "^4.3.2",
+    "util": "^0.12.4"
+  }
+}
