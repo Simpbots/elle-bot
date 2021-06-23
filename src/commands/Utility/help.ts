@@ -11,7 +11,7 @@ const run: RunFunction = async(client, message) => {
 
     const prefix = client.listprefix[message.guild.id] || client.Config.prefix
     const commandlist = Object.keys(listcommandcategory).map(a => {
-        return `**${a} commands**\n ${listcommandcategory[a].map(b => (`${'`'}${prefix}${b.name}${'`'}`)).join('\n')}`
+        return `**${a} commands**\n ${listcommandcategory[a].map(b => (`${'`'}${prefix} ${b.name}${'`'}`)).join('\n')}`
     })
 
 
