@@ -24,8 +24,7 @@ jobs:
         script: |
           cd /home/ubuntu/elle-bot
           git pull
-          git status
-          yarn install
-          yarn build
+          npm install
+          npm run build
           pm2 restart elle-bot
           
