@@ -17,6 +17,7 @@ class Bot extends Client {
     public autoresponseobject: object = {};
     public papdong: object = {};
     public pausearp: boolean = false;
+    public pausepap: boolean = false;
     public Config: Config;
     public logger: Consola = consola;
     public snipes: Collection<string, Message> = new Collection();
