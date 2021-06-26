@@ -13,7 +13,7 @@ const run: RunFunction = async(client, message: Message) => {
             message.channel.send(String(guildarp[message.content.toLowerCase()]).replace('{user}', `<@!${message.author.id}>`))
         }
     }
-    if(message.content.toLowerCase() == 'pap dong' && client.papdong[message.guild.id]) {
+    if(message.content.toLowerCase() == 'pap dong' && client.papdong[message.guild.id] && client.pausepap == false) {
         let linkpap = client.papdong[message.guild.id];
         let randomize = linkpap[Math.floor(Math.random() * linkpap.length)]
         message.channel.send(randomize.link)
