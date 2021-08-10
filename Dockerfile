@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:current-alpine
 
 WORKDIR /usr/src/app
 COPY package*.json yarn.lock  ./
@@ -8,4 +8,4 @@ COPY . .
 RUN yarn build
 RUN npm i -g pm2
 
-CMD ["pm2-runtime", "dist/index.js"]
+CMD ["pm2-runtime", "dist/index.js", "--name elle-bot"]
