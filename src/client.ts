@@ -151,7 +151,7 @@ class Bot extends Client {
         });
     }
     public embed(options: MessageEmbedOptions): MessageEmbed {
-        return new MessageEmbed({ ...options, color: '#C884FF' }).setTimestamp().setFooter(this.user.username);
+        return new MessageEmbed({ ...options, color: String(process.env.color) }).setTimestamp().setFooter(this.user.username);
     }
 }
 
