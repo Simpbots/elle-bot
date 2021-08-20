@@ -8,4 +8,4 @@ COPY . .
 RUN yarn build
 RUN npm i -g pm2
 
-CMD ["pm2-runtime", "dist/index.js", "--name elle-bot"]
+CMD ["pm2-runtime", "dist/index.js", "--name $BOT_NAME"]
