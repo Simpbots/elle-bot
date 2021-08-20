@@ -5,9 +5,8 @@ import { Client, Message, Collection, Intents, MessageEmbed, MessageEmbedOptions
 import { Config } from './types/config';
 import { Command } from './types/command';
 import { Event } from './types/event';
-import { Autoresponse } from './types/autoresponse';
 import mongoose from 'mongoose';
-
+import { EditSnipe } from './types/editsnipe';
 
 class Bot extends Client {
     public globPromise = promisify(Glob);
@@ -19,6 +18,7 @@ class Bot extends Client {
     public Config: Config;
     public logger: Consola = consola;
     public snipes: Collection<string, Message> = new Collection();
+    public editsnipes: Collection<string, EditSnipe> = new Collection();
     public commands: Collection<string, Command> = new Collection();
     public events: Collection<string, Event> = new Collection();
     public constructor() {
