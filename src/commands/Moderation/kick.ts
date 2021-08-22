@@ -1,4 +1,4 @@
-import { PermissionResolvable } from 'discord.js';
+import { PermissionResolvable } from 'discord.js-light';
 import { RunFunction } from '../../types/command';
 
 const name: string = 'kick';

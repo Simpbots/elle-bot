@@ -1,5 +1,5 @@
 import { Bot } from '../client';
-import { Message, PermissionResolvable } from 'discord.js';
+import { Message, PermissionResolvable } from 'discord.js-light';
 
 export interface RunFunction {
     (client: Bot, message: Message, args: any[]): Promise<T>

@@ -1,6 +1,6 @@
 import { RunFunction } from '../../types/command';
 import prefixModel from '../../models/prefixModel';
-import { PermissionResolvable } from 'discord.js';
+import { PermissionResolvable } from 'discord.js-light';
 
 const name: string = 'setprefix';
 const description: string = 'set prefix';

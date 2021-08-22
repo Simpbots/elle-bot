@@ -1,8 +1,8 @@
-import { PermissionResolvable } from 'discord.js';
+import { PermissionResolvable } from 'discord.js-light';
 import autoresponseModel from '../../models/autorepsonseModel';
 import { Autoresponse } from '../../types/autoresponse';
 import { RunFunction } from '../../types/command';
-import { Message } from 'discord.js'
+import { Message } from 'discord.js-light'
 
 const name: string = 'resetarp';
 const description: string = 'reset auto response';

@@ -1,5 +1,5 @@
 import { RunFunction } from '../types/event';
-import { Message } from 'discord.js';
+import { Message } from 'discord.js-light';
 import { EditSnipe } from '../types/editsnipe';
 
 const name: string = 'messageUpdate';

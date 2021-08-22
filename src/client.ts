@@ -1,7 +1,7 @@
 import Glob from 'glob';
 import consola, { Consola } from 'consola';
 import { promisify } from 'util';
-import { Client, Message, Collection, Intents, MessageEmbed, MessageEmbedOptions } from 'discord.js';
+import { Client, Message, Collection, MessageEmbed, MessageEmbedOptions, HexColorString } from 'discord.js-light';
 import { Config } from './types/config';
 import { Command } from './types/command';
 import { Event } from './types/event';
@@ -22,7 +22,7 @@ class Bot extends Client {
     public commands: Collection<string, Command> = new Collection();
     public events: Collection<string, Event> = new Collection();
     public constructor() {
-        super({ ws: { intents: Intents.ALL } })
+        super({ intents: 32767 })
     }
     public async start(config: Config): Promise<any> {
         this.Config = config;
@@ -50,7 +50,7 @@ class Bot extends Client {
         });
     }
     public embed(options: MessageEmbedOptions): MessageEmbed {
-        return new MessageEmbed({ ...options, color: String(process.env.color) }).setTimestamp().setFooter(this.user.username);
+        return new MessageEmbed({ ...options, color: String(process.env.color) as HexColorString }).setTimestamp().setFooter(this.user.username);
     }
 }
 

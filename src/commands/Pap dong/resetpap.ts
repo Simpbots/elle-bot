@@ -1,6 +1,6 @@
-import { PermissionResolvable } from 'discord.js';
+import { PermissionResolvable } from 'discord.js-light';
 import { RunFunction } from '../../types/command';
-import { Message } from 'discord.js'
+import { Message } from 'discord.js-light'
 import papdongModel from '../../models/papdongModel';
 
 const name: string = 'resetpap';

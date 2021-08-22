@@ -1,6 +1,6 @@
 import { Command } from '../types/command';
 import { RunFunction } from '../types/event';
-import { Message } from 'discord.js';
+import { Message } from 'discord.js-light';
 
 const name: string = 'message';
 const run: RunFunction = async(client, message: Message) => {

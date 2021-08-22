@@ -1,4 +1,4 @@
-import { PermissionResolvable } from 'discord.js';
+import { PermissionResolvable } from 'discord.js-light';
 import autoresponseModel from '../../models/autorepsonseModel';
 import { RunFunction } from '../../types/command';
 

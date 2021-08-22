@@ -1,4 +1,4 @@
-import { PermissionResolvable } from 'discord.js';
+import { PermissionResolvable } from 'discord.js-light';
 import papdongModel from '../../models/papdongModel';
 import { RunFunction } from '../../types/command';
 
