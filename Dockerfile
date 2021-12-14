@@ -1,11 +1,11 @@
-FROM node:current-alpine
+FROM node:16-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 COPY package*.json yarn.lock  ./
 RUN yarn install
 
 COPY . .
-RUN yarn build
-RUN npm i -g pm2
+RUN npm i -g pm2 typescript
+RUN tsc
 
 CMD ["pm2-runtime", "dist/index.js", "--name $BOT_NAME"]
