@@ -7,6 +7,7 @@ import { Command } from './types/command';
 import { Event } from './types/event';
 import mongoose from 'mongoose';
 import { EditSnipe } from './types/editsnipe';
+import cahceLoader from './utils/cacheLoader'
 
 class Bot extends Client {
     public globPromise = promisify(Glob);
@@ -28,6 +29,8 @@ class Bot extends Client {
         this.Config = config;
         this.login(config.token);
 
+        this.once('ready', () => cahceLoader(this))
+
         await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
             .then(e => this.logger.success('Connected to database'))
             .catch(err => this.logger.error(err))
@@ -48,6 +51,7 @@ class Bot extends Client {
             this.on(file.name, file.run.bind(null, this));
             this.logger.info(`Success load event: ${file.name}`);
         });
+
     }
     public embed(options: MessageEmbedOptions): MessageEmbed {
         return new MessageEmbed({ ...options, color: String(process.env.color) }).setTimestamp().setFooter(this.user.username);
